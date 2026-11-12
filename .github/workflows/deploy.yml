@@ -41,11 +41,17 @@ jobs:
       # Passo 3: instalar os pacotes do projeto (como a pasta node_modules)
       - run: npm ci
 
-      # Passo 4: traduzir o Angular para HTML, CSS e JavaScript normais.
-      # O --base-href diz ao site que ele mora em .../portefolio/
-      - run: npx ng build --base-href /portefolio/
+      # Passo 4: perguntar ao GitHub Pages qual é o endereço do site
+      # (ex.: /port-folio). O "id: pages" dá um nome a este passo para usar a resposta depois.
+      - id: pages
+        uses: actions/configure-pages@v5
 
-      # Passo 5: embrulhar a pasta traduzida para entregar ao Pages
+      # Passo 5: traduzir o Angular para HTML, CSS e JavaScript normais.
+      # O --base-href diz ao site em que "pasta" do endereço ele mora.
+      # Usa a resposta do passo anterior, por isso não preciso de escrever o nome à mão.
+      - run: npx ng build --base-href "${{ steps.pages.outputs.base_path }}/"
+
+      # Passo 6: embrulhar a pasta traduzida para entregar ao Pages
       - uses: actions/upload-pages-artifact@v4
         with:
           path: dist/portefolio/browser
