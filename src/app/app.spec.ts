@@ -15,10 +15,11 @@ describe('App', () => {
     expect(app).toBeTruthy();
   });
 
+  // Testa se o título principal (h1) mostra o meu nome
   it('should render title', async () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, portefolio');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Ludnice Machado');
   });
 });

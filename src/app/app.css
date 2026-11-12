@@ -1,0 +1,322 @@
+/* ===== CORES =====
+   As "variáveis" (começam com --) guardam as cores num só lugar.
+   Se quiseres mudar uma cor no site todo, basta mudar aqui! */
+:host {
+  --roxo: #6c4ab6;
+  --roxo-escuro: #3d2a6b;
+  --coral: #ff7a59;
+  --menta: #3fbfa0;
+  --lilas-claro: #efe8ff;
+  --branco: #ffffff;
+  --texto: #2e2640;
+  display: block;
+}
+
+/* ===== MENU DO TOPO ===== */
+.topo {
+  position: sticky; /* fica "colado" no topo quando descemos a página */
+  top: 0;
+  z-index: 10; /* fica por cima das outras coisas */
+  display: flex; /* põe os elementos lado a lado */
+  justify-content: center; /* põe o menu no meio */
+  align-items: center;
+  flex-wrap: wrap; /* em telas pequenas, deixa o menu descer para a linha de baixo */
+  gap: 12px;
+  padding: 14px 6%;
+  background: rgba(255, 255, 255, 0.9); /* branco quase transparente */
+  backdrop-filter: blur(8px); /* desfoca o que passa por trás */
+  box-shadow: 0 2px 12px rgba(108, 74, 182, 0.12);
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Cada botão do menu */
+.menu a {
+  padding: 8px 14px;
+  border-radius: 999px; /* cantos bem redondos, tipo "pílula" */
+  color: var(--roxo-escuro);
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s; /* mudança de cor suave */
+}
+
+/* :hover = quando o rato passa por cima */
+.menu a:hover {
+  background: var(--roxo);
+  color: var(--branco);
+}
+
+/* ===== INÍCIO ===== */
+.inicio {
+  min-height: 85vh; /* ocupa quase a tela toda (vh = altura da tela) */
+  display: flex;
+  flex-direction: column; /* empilha os elementos um embaixo do outro */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 6%;
+  color: var(--branco);
+  /* Fundo com degradê: do roxo para o coral */
+  background: linear-gradient(135deg, var(--roxo) 0%, #a05bc4 50%, var(--coral) 100%);
+}
+
+.ola {
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+.inicio h1 {
+  font-size: clamp(2.5rem, 7vw, 4.5rem); /* tamanho que se adapta à tela */
+  margin: 8px 0;
+}
+
+.cargo {
+  font-size: 1.2rem;
+  opacity: 0.95;
+}
+
+.procura {
+  margin: 24px 0;
+  padding: 12px 24px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.2);
+  font-size: 1.1rem;
+}
+
+/* ===== BOTÕES ===== */
+.botoes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.botao {
+  display: inline-block;
+  padding: 12px 26px;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s;
+}
+
+/* Ao passar o rato, o botão sobe um pouquinho */
+.botao:hover {
+  transform: translateY(-3px);
+}
+
+.botao-principal {
+  background: var(--coral);
+  color: var(--branco);
+}
+
+.botao-secundario {
+  background: var(--branco);
+  color: var(--roxo);
+  border: 2px solid var(--roxo);
+}
+
+/* ===== SECÇÕES ===== */
+.secao {
+  max-width: 1000px; /* não deixa o texto ficar largo demais */
+  margin: 0 auto; /* centraliza */
+  padding: 70px 6%;
+  scroll-margin-top: 60px; /* espaço para o menu não tapar o título ao clicar */
+}
+
+.secao h2 {
+  font-size: 2rem;
+  color: var(--roxo);
+  margin-bottom: 24px;
+}
+
+/* Risquinho colorido embaixo de cada título */
+.secao h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 5px;
+  margin-top: 8px;
+  border-radius: 5px;
+  background: var(--coral);
+}
+
+.secao p {
+  font-size: 1.1rem;
+  line-height: 1.7; /* espaço entre as linhas, para ler melhor */
+}
+
+/* ===== GRELHA DE CARTÕES =====
+   "flex" põe os cartões lado a lado. Quando não cabem, descem para a linha de baixo
+   (flex-wrap: wrap) e ficam centrados (justify-content: center).
+   Assim, com 5 cartões: 3 em cima e 2 no meio, em baixo. */
+.grelha {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.cartao {
+  /* Cada cartão tem 280px de largura e não estica (o 0 no início),
+     mas pode encolher num ecrã pequeno, como o do telemóvel (o 1) */
+  flex: 0 1 280px;
+  /* Faz os 280px já incluírem o espaço de dentro (padding).
+     Sem isto, o cartão ficaria mais largo e só caberiam 2 por linha */
+  box-sizing: border-box;
+  background: var(--branco);
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 6px 20px rgba(108, 74, 182, 0.1);
+  border-top: 5px solid var(--menta);
+}
+
+.cartao h3 {
+  margin-top: 0;
+  color: var(--roxo-escuro);
+}
+
+/* Cartões dos projetos: o botão fica sempre no fundo */
+.projeto {
+  display: flex;
+  flex-direction: column;
+  border-top-color: var(--coral);
+}
+
+.projeto .botao {
+  margin-top: auto; /* empurra o botão para baixo */
+  align-self: flex-start;
+}
+
+.emoji {
+  font-size: 2.5rem;
+}
+
+/* Etiquetas (as "pílulas" com as tecnologias) */
+.etiquetas {
+  list-style: none; /* tira as bolinhas da lista */
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.etiquetas li {
+  background: var(--lilas-claro);
+  color: var(--roxo);
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* ===== LIVROS ===== */
+.livros {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.livros li {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: var(--branco);
+  padding: 16px 20px;
+  border-radius: 14px;
+  border-left: 6px solid var(--roxo);
+}
+
+.livro-ano {
+  font-weight: 700;
+  color: var(--coral);
+  font-size: 1.2rem;
+}
+
+/* <small> vai para a linha de baixo */
+.livros small,
+.linha-tempo small {
+  display: block;
+  color: #6b6380;
+}
+
+/* ===== FORMAÇÃO (linha do tempo) ===== */
+.linha-tempo {
+  list-style: none;
+  padding-left: 24px;
+  border-left: 4px solid var(--lilas-claro);
+}
+
+.linha-tempo li {
+  position: relative;
+  margin-bottom: 26px;
+}
+
+/* A bolinha colorida de cada item da linha do tempo */
+.linha-tempo li::before {
+  content: '';
+  position: absolute;
+  left: -34px;
+  top: 4px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%; /* 50% transforma o quadrado num círculo */
+  background: var(--menta);
+}
+
+.destaque {
+  display: inline-block;
+  background: var(--menta);
+  color: var(--branco);
+  font-size: 0.8rem;
+  padding: 2px 10px;
+  border-radius: 999px;
+  margin-bottom: 4px;
+}
+
+/* ===== CONTACTO ===== */
+.contacto {
+  text-align: center;
+}
+
+.contacto h2::after {
+  margin: 8px auto 0; /* centraliza o risquinho */
+}
+
+/* ===== RODAPÉ ===== */
+.rodape {
+  text-align: center;
+  padding: 24px;
+  background: var(--roxo-escuro);
+  color: var(--lilas-claro);
+}
+
+/* ===== BOTÃO VOLTAR AO INÍCIO ===== */
+.voltar-inicio {
+  position: fixed; /* fica parado no mesmo lugar da tela, mesmo ao descer */
+  right: 24px;
+  bottom: 24px;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: var(--coral);
+  color: var(--branco);
+  font-size: 1.6rem;
+  text-decoration: none;
+  box-shadow: 0 6px 16px rgba(255, 122, 89, 0.4);
+  transition: transform 0.2s;
+}
+
+.voltar-inicio:hover {
+  transform: scale(1.1); /* cresce um pouquinho */
+}

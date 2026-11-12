@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+/* Estilos que valem para o site TODO */
+
+/* Faz a página "deslizar" suavemente quando clicamos num botão do menu */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0; /* tira o espaço branco que o navegador põe à volta */
+  font-family: 'Poppins', Arial, sans-serif; /* letra do site (Arial é a reserva) */
+  background: #f7f3ff; /* fundo lilás bem clarinho */
+  color: #2e2640; /* cor do texto: roxo quase preto, mais suave que o preto puro */
+}

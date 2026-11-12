@@ -1,0 +1,62 @@
+# ===== ROBÔ QUE PUBLICA O PORTFÓLIO NO GITHUB PAGES =====
+# Este ficheiro é lido pelo GitHub (não pelo meu computador).
+# Linhas que começam com # são comentários: o GitHub ignora-as.
+# ATENÇÃO: em YAML os espaços no início das linhas são importantes. Não os apagues!
+
+# Nome do robô (aparece no separador "Actions" do GitHub)
+name: Publicar no GitHub Pages
+
+# QUANDO o robô trabalha:
+on:
+  push:
+    branches: [main] # sempre que eu fizer push para o ramo "main"
+  workflow_dispatch: # e também quando eu carregar num botão no separador "Actions"
+
+# Autorizações que o robô precisa para publicar o site
+permissions:
+  contents: read # ler o código
+  pages: write # escrever no GitHub Pages
+  id-token: write # provar ao Pages que é mesmo o meu robô
+
+# Se eu fizer dois pushes seguidos, não publica os dois ao mesmo tempo
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+# O QUE o robô faz: duas tarefas, uma depois da outra
+jobs:
+  # ----- Tarefa 1: traduzir o projeto Angular -----
+  construir:
+    runs-on: ubuntu-latest # usa um computador do GitHub (com Linux)
+    steps:
+      # Passo 1: copiar o meu código para o computador do GitHub
+      - uses: actions/checkout@v5
+
+      # Passo 2: instalar o Node (a mesma versão 24 que tenho no meu computador)
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm # guarda os pacotes para a próxima vez ser mais rápida
+
+      # Passo 3: instalar os pacotes do projeto (como a pasta node_modules)
+      - run: npm ci
+
+      # Passo 4: traduzir o Angular para HTML, CSS e JavaScript normais.
+      # O --base-href diz ao site que ele mora em .../portefolio/
+      - run: npx ng build --base-href /portefolio/
+
+      # Passo 5: embrulhar a pasta traduzida para entregar ao Pages
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist/portefolio/browser
+
+  # ----- Tarefa 2: pôr o site no ar -----
+  publicar:
+    needs: construir # só começa quando a tarefa 1 acabar bem
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }} # o endereço do site
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
