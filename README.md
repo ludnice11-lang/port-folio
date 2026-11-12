@@ -1,59 +1,40 @@
-# Portefolio
+# Portfólio · Ludnice Machado ✨
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.2.0.
+![Capa do portfólio: fundo em degradê roxo e coral com o nome Ludnice Machado, o texto "Programadora Front-End Júnior, Escritora, Educadora" e os botões "Ver os meus projetos" e "Fale comigo"](imagens/capa.png)
 
-## Development server
+Meu site pessoal, onde apresento quem sou, o que já aprendi e os projetos que criei enquanto estudo programação.
 
-To start a local development server, run:
+## Veja o site
 
-```bash
-ng serve
-```
+[Clique aqui para abrir o meu portfólio](https://ludnice11-lang.github.io/port-folio/)
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Sobre mim
 
-## Code scaffolding
+Sou educadora e escritora de livros infantis, moro em Portugal e estou em transição para a tecnologia. Estou cursando **Desenvolvimento de Software** na **Escola de Formação Sónia Monteiro**.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Procuro uma oportunidade de **estágio** ou vaga de **programadora júnior front-end**.
 
-```bash
-ng generate component component-name
-```
+## O que tem no site
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- **Sobre mim**: minha história e o curso que estou fazendo
+- **O que já aprendi**: as linguagens e ferramentas que estudei
+- **Projetos**: Jogo das Letras, Bebê Livre e Guia de Códigos
+- **Escritora**: meus livros publicados
+- **Formação** e **Contacto**
 
-```bash
-ng generate --help
-```
+## Tecnologias usadas
 
-## Building
+- Angular
+- HTML
+- CSS
+- TypeScript
+- GitHub Actions
+- GitHub Pages
 
-To build the project run:
+## O que aprendi
 
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Organizar um site em Angular, com o HTML, o CSS e os dados em arquivos separados
+- Repetir blocos na página com `@for`, usando listas
+- Guardar as cores em variáveis no CSS, para mudar o site todo num só lugar
+- Organizar elementos com `flex` para o site funcionar no computador e no celular
+- Publicar um projeto Angular no GitHub Pages com um robô do GitHub Actions
