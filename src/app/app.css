@@ -1,6 +1,6 @@
 /* ===== CORES =====
-   As "variáveis" (começam com --) guardam as cores num só lugar.
-   Se quiseres mudar uma cor no site todo, basta mudar aqui! */
+   As "variáveis" (começam c/ --) guardam as cores num só lugar.
+   Se quiseres mudar 1 cor no st todo, basta mudar aqui! */
 :host {
   --roxo: #6c4ab6;
   --roxo-escuro: #3d2a6b;
@@ -8,23 +8,23 @@
   --menta: #3fbfa0;
   --lilas-claro: #efe8ff;
   --branco: #ffffff;
-  --texto: #2e2640;
+
   display: block;
 }
 
 /* ===== MENU DO TOPO ===== */
 .topo {
-  position: sticky; /* fica "colado" no topo quando descemos a página */
+  position: sticky; /* fica "colado" no topo qd descemos a pág */
   top: 0;
   z-index: 10; /* fica por cima das outras coisas */
-  display: flex; /* põe os elementos lado a lado */
+  display: flex; /* põe os elems. lado a lado */
   justify-content: center; /* põe o menu no meio */
   align-items: center;
-  flex-wrap: wrap; /* em telas pequenas, deixa o menu descer para a linha de baixo */
+  flex-wrap: wrap; /* em telas pequenas, deixa o menu descer p/ a linha de baixo */
   gap: 12px;
   padding: 14px 6%;
   background: rgba(255, 255, 255, 0.9); /* branco quase transparente */
-  backdrop-filter: blur(8px); /* desfoca o que passa por trás */
+  backdrop-filter: blur(8px); /* desfoca o q passa por trás */
   box-shadow: 0 2px 12px rgba(108, 74, 182, 0.12);
 }
 
@@ -34,7 +34,7 @@
   gap: 8px;
 }
 
-/* Cada botão do menu */
+/* Cada btn do menu */
 .menu a {
   padding: 8px 14px;
   border-radius: 999px; /* cantos bem redondos, tipo "pílula" */
@@ -44,7 +44,7 @@
   transition: background 0.2s, color 0.2s; /* mudança de cor suave */
 }
 
-/* :hover = quando o rato passa por cima */
+/* :hover = qd o rato passa por cima */
 .menu a:hover {
   background: var(--roxo);
   color: var(--branco);
@@ -54,13 +54,13 @@
 .inicio {
   min-height: 85vh; /* ocupa quase a tela toda (vh = altura da tela) */
   display: flex;
-  flex-direction: column; /* empilha os elementos um embaixo do outro */
+  flex-direction: column; /* empilha os elems. 1 embaixo do outro */
   justify-content: center;
   align-items: center;
   text-align: center;
   padding: 40px 6%;
   color: var(--branco);
-  /* Fundo com degradê: do roxo para o coral */
+  /* Fundo c/ degradê: do roxo p/ o coral */
   background: linear-gradient(135deg, var(--roxo) 0%, #a05bc4 50%, var(--coral) 100%);
 }
 
@@ -70,7 +70,7 @@
 }
 
 .inicio h1 {
-  font-size: clamp(2.5rem, 7vw, 4.5rem); /* tamanho que se adapta à tela */
+  font-size: clamp(2.5rem, 7vw, 4.5rem); /* tamanho q se adapta à tela */
   margin: 8px 0;
 }
 
@@ -87,7 +87,7 @@
   font-size: 1.1rem;
 }
 
-/* ===== BOTÕES ===== */
+/* ===== BTNS ===== */
 .botoes {
   display: flex;
   flex-wrap: wrap;
@@ -105,7 +105,7 @@
   transition: transform 0.2s;
 }
 
-/* Ao passar o rato, o botão sobe um pouquinho */
+/* Ao passar o rato, o btn sobe 1 pouquinho */
 .botao:hover {
   transform: translateY(-3px);
 }
@@ -123,10 +123,10 @@
 
 /* ===== SECÇÕES ===== */
 .secao {
-  max-width: 1000px; /* não deixa o texto ficar largo demais */
+  max-width: 1000px; /* ñ deixa o texto ficar largo demais */
   margin: 0 auto; /* centraliza */
   padding: 70px 6%;
-  scroll-margin-top: 60px; /* espaço para o menu não tapar o título ao clicar */
+  scroll-margin-top: 60px; /* espaço p/ o menu ñ tapar o título ao clicar */
 }
 
 .secao h2 {
@@ -148,13 +148,11 @@
 
 .secao p {
   font-size: 1.1rem;
-  line-height: 1.7; /* espaço entre as linhas, para ler melhor */
+  line-height: 1.7; /* espaço entre as linhas, p/ ler melhor */
 }
 
 /* ===== GRELHA DE CARTÕES =====
-   "flex" põe os cartões lado a lado. Quando não cabem, descem para a linha de baixo
-   (flex-wrap: wrap) e ficam centrados (justify-content: center).
-   Assim, com 5 cartões: 3 em cima e 2 no meio, em baixo. */
+   C/ 5 cartões: 3 em cima e 2 no meio, em baixo. */
 .grelha {
   display: flex;
   flex-wrap: wrap;
@@ -163,11 +161,11 @@
 }
 
 .cartao {
-  /* Cada cartão tem 280px de largura e não estica (o 0 no início),
+  /* Cada cartão tem 280px de largura e ñ estica (o 0 no início),
      mas pode encolher num ecrã pequeno, como o do telemóvel (o 1) */
   flex: 0 1 280px;
   /* Faz os 280px já incluírem o espaço de dentro (padding).
-     Sem isto, o cartão ficaria mais largo e só caberiam 2 por linha */
+     Sem isto, o cartão ficaria + largo e só caberiam 2 por linha */
   box-sizing: border-box;
   background: var(--branco);
   border-radius: 18px;
@@ -181,7 +179,7 @@
   color: var(--roxo-escuro);
 }
 
-/* Cartões dos projetos: o botão fica sempre no fundo */
+/* Cartões dos projetos: o btn fica sempre no fundo */
 .projeto {
   display: flex;
   flex-direction: column;
@@ -189,7 +187,7 @@
 }
 
 .projeto .botao {
-  margin-top: auto; /* empurra o botão para baixo */
+  margin-top: auto; /* empurra o btn p/ baixo */
   align-self: flex-start;
 }
 
@@ -197,7 +195,7 @@
   font-size: 2.5rem;
 }
 
-/* Etiquetas (as "pílulas" com as tecnologias) */
+/* Etiquetas (as "pílulas" c/ as tecnologias) */
 .etiquetas {
   list-style: none; /* tira as bolinhas da lista */
   padding: 0;
@@ -240,7 +238,7 @@
   font-size: 1.2rem;
 }
 
-/* <small> vai para a linha de baixo */
+/* <small> vai p/ a linha de baixo */
 .livros small,
 .linha-tempo small {
   display: block;
@@ -298,9 +296,9 @@
   color: var(--lilas-claro);
 }
 
-/* ===== BOTÃO VOLTAR AO INÍCIO ===== */
+/* ===== BTN VOLTAR AO INÍCIO ===== */
 .voltar-inicio {
-  position: fixed; /* fica parado no mesmo lugar da tela, mesmo ao descer */
+  position: fixed; /* fica parado no msm lugar da tela, msm ao descer */
   right: 24px;
   bottom: 24px;
   width: 52px;
@@ -318,5 +316,5 @@
 }
 
 .voltar-inicio:hover {
-  transform: scale(1.1); /* cresce um pouquinho */
+  transform: scale(1.1); /* cresce 1 pouquinho */
 }

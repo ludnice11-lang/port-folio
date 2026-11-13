@@ -1,13 +1,13 @@
-/* Estilos que valem para o site TODO */
+/* Estilos q valem p/ o st TODO */
 
-/* Faz a página "deslizar" suavemente quando clicamos num botão do menu */
+/* Faz a pág "deslizar" suavemente qd clicamos num btn do menu */
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  margin: 0; /* tira o espaço branco que o navegador põe à volta */
-  font-family: 'Poppins', Arial, sans-serif; /* letra do site (Arial é a reserva) */
+  margin: 0; /* tira o espaço branco q o naveg. põe à volta */
+  font-family: 'Poppins', Arial, sans-serif; /* letra do st (Arial é a reserva) */
   background: #f7f3ff; /* fundo lilás bem clarinho */
-  color: #2e2640; /* cor do texto: roxo quase preto, mais suave que o preto puro */
+  color: #2e2640; /* cor do texto: roxo quase preto, + suave q o preto puro */
 }

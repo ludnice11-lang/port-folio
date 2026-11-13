@@ -1,16 +1,16 @@
-// Importa o "Component", que é o que transforma esta classe numa peça da página
+// Importa o "Component", q transforma esta classe numa peça da pág
 import { Component } from '@angular/core';
 
-// @Component diz ao Angular: "esta classe controla um pedaço do site"
+// @Component diz ao Angular: "esta classe controla um pedaço do st"
 @Component({
   selector: 'app-root', // nome da "etiqueta" usada no index.html: <app-root>
-  templateUrl: './app.html', // ficheiro com o HTML da página
-  styleUrl: './app.css', // ficheiro com as cores e o estilo
+  templateUrl: './app.html', // ficheiro c/ o HTML da pág
+  styleUrl: './app.css', // ficheiro c/ as cores e o estilo
 })
 export class App {
   // ===== COMPETÊNCIAS =====
-  // Uma lista de grupos. Cada grupo tem um título e uma lista de coisas que aprendi.
-  // "protected readonly" quer dizer: o HTML pode ler, mas ninguém pode trocar a lista.
+  // 1 lista de grupos. Cada grupo tem 1 título e 1 lista de coisas q aprendi.
+  // "protected readonly" = o HTML pode ler, mas ninguém pode trocar a lista.
   protected readonly competencias = [
     {
       titulo: 'Front-end',
@@ -41,7 +41,7 @@ export class App {
   ];
 
   // ===== PROJETOS =====
-  // Cada projeto tem nome, descrição, tecnologias, um link e o texto do botão.
+  // Cada projeto tem nome, descrição, tecnologias, 1 link e o texto do btn.
   protected readonly projetos = [
     {
       nome: 'Jogo das Letras',
@@ -83,6 +83,6 @@ export class App {
     },
   ];
 
-  // Guarda o ano atual, para mostrar no rodapé (ex.: © 2026)
+  // Guarda o ano atual, p/ mostrar no rodapé (ex.: © 2026)
   protected readonly ano = new Date().getFullYear();
 }

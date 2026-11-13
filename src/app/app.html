@@ -1,8 +1,8 @@
 <!-- ===== MENU DO TOPO ===== -->
-<!-- <header> é o cabeçalho. Fica sempre visível lá em cima (ver "position: sticky" no app.css) -->
+<!-- <header> = cabeçalho. Fica sempre visível lá em cima (ver "position: sticky" no app.css) -->
 <header class="topo">
-  <!-- <nav> é o menu de navegação. Cada link leva a uma secção da página -->
-  <!-- O "#sobre" procura na página o elemento com id="sobre" -->
+  <!-- <nav> = menu de navegação. Cada link leva a 1 secção da pág -->
+  <!-- O "#sobre" procura na pág o elem. c/ id="sobre" -->
   <nav class="menu">
     <a href="#sobre">Sobre mim</a>
     <a href="#competencias">O que aprendi</a>
@@ -14,19 +14,19 @@
 </header>
 
 <main>
-  <!-- ===== INÍCIO (a primeira coisa que aparece) ===== -->
+  <!-- ===== INÍCIO (a 1ª coisa q aparece) ===== -->
   <section id="inicio" class="inicio">
     <p class="ola">Olá, eu sou a</p>
     <h1>Ludnice Machado</h1>
     <p class="cargo">Programadora Front-End Júnior · Escritora · Educadora</p>
 
-    <!-- Destaque: o que estou à procura -->
+    <!-- Destaque: o q estou à procura -->
     <p class="procura">
       ✨ À procura de <strong>estágio</strong> ou vaga de
       <strong>programadora júnior front-end</strong>
     </p>
 
-    <!-- Dois botões grandes -->
+    <!-- 2 btns grandes -->
     <div class="botoes">
       <a class="botao botao-principal" href="#projetos">Ver os meus projetos</a>
       <a class="botao botao-secundario" href="#contacto">Fale comigo</a>
@@ -54,11 +54,11 @@
     <h2>O que já aprendi</h2>
 
     <div class="grelha">
-      <!-- @for repete este bloco para cada grupo da lista "competencias" (que está no app.ts) -->
+      <!-- @for repete este bloco p/ cada grupo da lista "competencias" (q está no app.ts) -->
       <!-- "track grupo.titulo" ajuda o Angular a identificar cada item -->
       @for (grupo of competencias; track grupo.titulo) {
         <div class="cartao">
-          <!-- {{ }} mostra na página o valor que está no app.ts -->
+          <!-- {{ }} mostra na pág o valor q está no app.ts -->
           <h3>{{ grupo.titulo }}</h3>
           <ul class="etiquetas">
             @for (item of grupo.itens; track item) {
@@ -87,7 +87,7 @@
             }
           </ul>
 
-          <!-- [href] com parênteses retos = o link vem do app.ts -->
+          <!-- [href] c/ parênteses retos = o link vem do app.ts -->
           <!-- target="_blank" abre o link numa aba nova -->
           <a class="botao botao-principal" [href]="projeto.link" target="_blank">
             {{ projeto.textoBotao }}
@@ -163,6 +163,6 @@
   <p>© {{ ano }} Ludnice Machado · Feito com Angular e muito café ☕</p>
 </footer>
 
-<!-- ===== BOTÃO VOLTAR AO INÍCIO ===== -->
-<!-- Fica fixo no canto inferior direito da tela. "aria-label" ajuda leitores de ecrã -->
+<!-- ===== BTN VOLTAR AO INÍCIO ===== -->
+<!-- Fica fixo no canto inf. dir. da tela. "aria-label" ajuda leitores de ecrã -->
 <a class="voltar-inicio" href="#inicio" aria-label="Voltar ao início">↑</a>
